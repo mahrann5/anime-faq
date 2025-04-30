@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>الأسئلة الشائعة - متجر الأنمي</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+    }
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+    .faq-wrapper {
+      position: relative;
+      padding: 80px 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .faq-section {
+      background: rgba(0, 0, 0, 0.75);
+      color: white;
+      max-width: 800px;
+      width: 90%;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.6);
+    }
+    .faq-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ff6f61;
+      font-weight: bold;
+    }
+    .faq-item {
+      margin-bottom: 15px;
+    }
+    .faq-toggle {
+      background: #444;
+      color: #fff;
+      width: 100%;
+      padding: 15px;
+      border: none;
+      text-align: left;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+    .faq-toggle:hover {
+      background-color: #ff6f61;
+    }
+    .faq-icon {
+      font-size: 1.5rem;
+      margin-left: 10px;
+    }
+    .faq-answer {
+      display: none;
+      background-color: #fafafa;
+      color: #222;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .faq-toggle:after {
+      content: '+';
+      font-size: 2rem;
+      float: right;
+    }
+    .faq-toggle.open:after {
+      content: '-';
+    }
+    .faq-answer.show {
+      display: block;
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+      .faq-title {
+        font-size: 1.8rem;
+      }
+      .faq-toggle {
+        font-size: 1rem;
+        padding: 12px;
+      }
+      .faq-icon {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <video class="video-bg" autoplay muted loop>
+    <source src="anime_bg_trimmed.mp4" type="video/mp4">
+    متصفحك لا يدعم عرض الفيديو.
+  </video>
+  <div class="faq-wrapper">
+    <div class="faq-section">
+      <h2 class="faq-title">الأسئلة الشائعة</h2>
+      <div class="faq-item">
+        <button class="faq-toggle"><span class="faq-icon">🎌</span> <span class="faq-question">من نحن؟</span></button>
+        <div class="faq-answer"><p>نحن متجر متخصص في بيع منتجات الأنمي الأصلية والمخصصة لمحبي هذا العالم الرائع.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle"><span class="faq-icon">🍥</span> <span class="faq-question">كيف يمكنني إرجاع منتج؟</span></button>
+        <div class="faq-answer"><p>لإرجاع المنتج، يجب أن يكون في حالته الأصلية. يرجى التواصل مع دعم العملاء خلال 30 يومًا.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle"><span class="faq-icon">🌀</span> <span class="faq-question">هل يمكنني تخصيص المنتجات؟</span></button>
+        <div class="faq-answer"><p>نعم، نوفر خدمات تخصيص لبعض المنتجات مثل الأكواب والملابس.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle"><span class="faq-icon">🚚</span> <span class="faq-question">متى سيصل شحني؟</span></button>
+        <div class="faq-answer"><p>نقوم بالشحن خلال 2-3 أيام عمل مع إشعار ورقم تتبع.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle"><span class="faq-icon">💳</span> <span class="faq-question">ما هي طرق الدفع المتاحة؟</span></button>
+        <div class="faq-answer"><p>نقبل البطاقات الائتمانية، الدفع عند الاستلام، والتحويل البنكي.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle"><span class="faq-icon">🔥</span> <span class="faq-question">هل تتوفر منتجات جديدة؟</span></button>
+        <div class="faq-answer"><p>نعم، نُحدث مجموعتنا باستمرار بأحدث تصاميم الأنمي.</p></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const toggles = document.querySelectorAll('.faq-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const answer = toggle.nextElementSibling;
+        answer.classList.toggle('show');
+        toggle.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
